@@ -5,7 +5,7 @@ const itensController = require('../controllers/itens-controller');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
-router.post('/', itensController.postItens);
-router.get('/', itensController.getItens);
+router.post('/', login, itensController.postItens);
+router.get('/', login, itensController.getItens);
 
 module.exports = router;

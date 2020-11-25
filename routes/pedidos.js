@@ -4,9 +4,9 @@ const mysql = require('../mysql').pool;
 const login = require('../middleware/login');
 const pedidosController = require('../controllers/pedidos-controller');
 
-router.get('/', pedidosController.getPedidos);
-router.post('/', pedidosController.postPedidos);
-router.get('/:id_pedido', pedidosController.getUmPedido);
-router.delete('/', pedidosController.delPedido);
+router.get('/', login, pedidosController.getPedidos);
+router.post('/', login, pedidosController.postPedidos);
+router.get('/:id_pedido', login, pedidosController.getUmPedido);
+router.delete('/', login, pedidosController.delPedido);
 
 module.exports = router;
